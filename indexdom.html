@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!-- add javascript input form where someone puts their name in and once they submit it, it updates webpage to say welcome to the class-->
+
+<html>
+
+<head>
+    <title>DOMinant HTML</title>
+
+</head>
+
+<body>
+    <h1 id="maintitle">Learning DOMinant HTML</h1>
+    <h4 id="subtitle"></h4>
+
+<h5>Please enter your name:</h5>
+
+<input id="inputName1">
+<button type="button" onclick="myFunction()">Submit</button>
+
+
+
+    <p id="marquee">Facts:</p>
+    
+    <ul>
+        <li class="b1color">The DOM is a tree.</li>
+        <li class="b1color">HTML tags are also called Element Nodes or just Elements</li>
+        <li class="b1color">You access DOM components via its Elements</li>
+        <li class="b1color">Elements have parents, children, siblings, ancestors, and descendants.</li>
+        <li class="b1color">Selector a: getElementById() </li>
+        <li class="b1color">Selector a: getElementsByClassName() </li>
+
+    </ul>
+
+<p>Alternative Facts:</p>
+    <ul>
+        <li class="b2color">The DOM is a tree.</li>
+        <li class="b2color">HTML tags are also called Element Nodes or just Elements</li>
+        <li class="b2color">You access DOM components via its Elements</li>
+        <li class="b2color">Elements have parents, children, siblings, ancestors, and descendants.</li>
+        <li class="b2color">Selector a: getElementById() </li>
+        <li class="b2color">Selector a: getElementsByClassName() </li>
+
+    </ul>
+
+
+</body>
+
+
+        
+   
+    <script>
+       
+    function myFunction() { var inputname1, hi;
+        var inputName1 = document.getElementById("inputName1").value;
+        document.getElementById("subtitle").innerHTML = "With yours truly " + inputName1;
+    }
+    </script>
+
+</html>
+
+
