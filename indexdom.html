@@ -13,15 +13,15 @@
     <h1 id="maintitle">Learning DOMinant HTML</h1>
     <h4 id="subtitle"></h4>
 
-<h5>Please enter your name:</h5>
+    <h5>Please enter your name:</h5>
 
-<input id="inputName1">
-<button type="button" onclick="myFunction()">Submit</button>
+    <input id="inputName1">
+    <button type="button" onclick="myFunction()">Submit</button>
 
 
 
     <p id="marquee">Facts:</p>
-    
+
     <ul>
         <li class="b1color">The DOM is a tree.</li>
         <li class="b1color">HTML tags are also called Element Nodes or just Elements</li>
@@ -32,7 +32,7 @@
 
     </ul>
 
-<p>Alternative Facts:</p>
+    <p>Alternative Facts:</p>
     <ul>
         <li class="b2color">The DOM is a tree.</li>
         <li class="b2color">HTML tags are also called Element Nodes or just Elements</li>
@@ -47,16 +47,14 @@
 </body>
 
 
-        
-   
-    <script>
-       
-    function myFunction() { var inputname1, hi;
+
+
+
+<script>
+    function myFunction() {
         var inputName1 = document.getElementById("inputName1").value;
         document.getElementById("subtitle").innerHTML = "With yours truly " + inputName1;
     }
-    </script>
+</script>
 
 </html>
-
-
