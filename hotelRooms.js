@@ -1,13 +1,13 @@
 var hotel = {  //var=name, method is a function inside of an object
     name: "CareerDevs JavaScript Hotel",  //key, value, pair aka properties 
-    ratiing: 5.0, //decimals=floating point values
+    rating: 5.0, //decimals=floating point values
     roomRate: 325.00,
     roomNumbersAvailable: ["101" ,"102" , "103" , "104" , "105" , "106"], //key to array contain a string
     roomNumbersBooked: [],
-    roomType: "Queen", //intergers
+    roomType: "Queen", //integers
     
     numberOfRoomsAvailable: function() { //lenght of the number of rooms available array
-        return this.roomNumbersAvailable.length;  //return=intergers
+        return this.roomNumbersAvailable.length;  //return=integers
        
    },
    
@@ -22,10 +22,12 @@ var hotel = {  //var=name, method is a function inside of an object
     },
     bookRoom: function() { // only book a room if one or more is available
         if (this.numberOfRoomsAvailable() > 0) { //select a random available room + return randomAvailRoom
-        var randomRoom = this.roomNumbersAvailable[Math.floor(Math.random()*this.roomNumbersAvailable.length)];
+        // var randomRoom = this.roomNumbersAvailable[Math.floor(Math.random()*this.roomNumbersAvailable.length)];
+        var selectedRoomDD = document.getElementById("selectedRoom").value;
         //list.splice( list.indexOf("foo"), 1); returns the position of the item in the array
         //remove the booked room from roomNumbersAvailable and add it to roomNumbersBooked
-        this.roomNumbersBooked.unshift(this.roomNumbersAvailable.splice(this.roomNumbersAvailable.indexOf(randomRoom), 1)[0]); 
+        this.roomNumbersBooked = this.roomNumbersBooked.concat(this.roomNumbersAvailable.splice(1, 1)); 
+        //alert("Room "+selectedRoomDD+" has been booked.");
         }
     },  
     checkoutRoom: function() { // only book a room if one or more is available
@@ -60,13 +62,13 @@ document.getElementById("rmsAvailable").innerHTML = roomList;
 //roomNumbersAvailable: ["101" ,"102" , "103" , "104" , "105" , "106"],
 //SO select a room method, change from <ul> to dropp down
 
-var selectRoomList = "<form> <select id='selctedRoom'>";
+var selectRoomList = "<form> <select id='selectedRoom'>";
 for (var i=0; i < hotel.roomNumbersAvailable.length; i++) {
     //need to escape \ certain ' quotes on following lines (ie:"<option value=\'" 
     //Research"escaping characters+ qoutes" and concatnate using "+"
-    selectRoomList += "<option value=\'"+hotel.roomNumbersAvailable[i]+"\'>"+hotel.roomNumbersAvailable[i]+"</option>";
+    selectRoomList += "<option value="+hotel.roomNumbersAvailable[i]+">"+hotel.roomNumbersAvailable[i]+"</option>";
 }
-selectRoomList += "</selcet> </form>";
+selectRoomList += "</select> </form>";
 document.getElementById("selectARoom").innerHTML = selectRoomList;
 
 
