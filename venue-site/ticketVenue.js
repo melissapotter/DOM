@@ -36,21 +36,37 @@ var tickets = {
             selectSeatList += "</select> </form>";
             document.getElementById("selectASeat").innerHTML = selectSeatList;
 
-// update dropdown list of booked seats
+            // update dropdown list of booked seats
 
-var bookedSeatList = "<form> <select id='bookedSeats'>";
-for (var i = 0; i < this.seatNumbersBooked.length; i++) {
+            var bookedSeatList = "<form> <select id='bookedSeats'>";
+            for (var i = 0; i < this.seatNumbersBooked.length; i++) {
 
-    bookedSeatList += "<option value=" + this.seatNumbersBooked[i] + ">" + this.seatNumbersBooked[i] + "</option>";
-}
-selectSeatList += "</select> </form>";
-document.getElementById("seatsBooked").innerHTML = bookedSeatList;
-
-
+                bookedSeatList += "<option value=" + this.seatNumbersBooked[i] + ">" + this.seatNumbersBooked[i] + "</option>";
+            }
+            selectSeatList += "</select> </form>";
+            document.getElementById("seatsBooked").innerHTML = bookedSeatList;
 
 
 
             //alert("Seat number "+selectedSeat+" has been booked.");
+        }
+    },
+    // new method ------------------------------------------
+
+    returnTicket: function() {
+        var seatReturn = document.getElementById("seatReturn").value;
+        if (this.numberOfTicketsBooked() > 0) {
+
+            this.seatNumbersAvailable = this.seatNumbersAvailable.concat(this.seatNumbersBooked.splice(this.seatNumbersBooked.indexOf(seatReturn), 1));
+            // update dropdown list of booked seats
+            var returnSeatList = "<form> <select id='returnSeat'>";
+            for (var i = 0; i < this.seatNumbersBooked.length; i++) {
+
+                returnSeatList += "<option value=" + this.seatNumbersBooked[i] + ">" + this.seatNumbersBooked[i] + "</option>";
+            }
+            returnSeatList += "</select> </form>";
+            document.getElementById("seatsBooked").innerHTML = returnSeatList;
+            // ----- 
         }
     },
 
